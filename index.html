@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karaoke PRO - CONCURSO $1.000.000 🎟️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .marca-agua {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.02);
+            pointer-events: none;
+            z-index: 0;
+            letter-spacing: 15px;
+            text-transform: uppercase;
+        }
+
+        .banner-premio {
+            background: linear-gradient(45deg, #ffd700, #ffb300, #ff8f00);
+            color: #000;
+            text-align: center;
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin: 15px auto;
+            max-width: 900px;
+            font-weight: 900;
+            font-size: 20px;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+            animation: brillar 2s infinite alternate;
+        }
+        @keyframes brillar {
+            from { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+            to { box-shadow: 0 0 35px rgba(255, 215, 0, 0.7); }
+        }
+        .sub-premio {
+            font-size: 14px;
+            font-weight: normal;
+            margin-top: 5px;
+        }
+
+        .login-container {
+            max-width: 420px;
+            margin: 100px auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 2px solid;
+            border-image: linear-gradient(45deg, #00f5d4, #00bbf9) 1;
+            box-shadow: 0 0 30px rgba(0, 245, 212, 0.1);
+            position: relative; z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+        .login-container h2 {
+            text-align: center;
+            background: linear-gradient(45deg, #00f5d4, #00bbf9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+        .input-group { margin-bottom: 18px; }
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #b2b2b2;
+            font-size: 14px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 14px 15px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+            background: #1e293b;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .input-group input:focus {
+            border-color: #00f5d4;
+            box-shadow: 0 0 0 3px rgba(0, 245, 212, 0.1);
+        }
+        .btn {
+            width: 100%;
+            padding: 14px 15px;
+            border-radius: 10px;
+            border: none;
+            background: linear-gradient(45deg, #00f5d4, #00bbf9);
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 187, 249, 0.2);
+        }
+        .btn-premio {
+            background: linear-gradient(45deg, #ffd700, #ffb300);
+            color: #000;
+            font-weight: 900;
+            font-size: 18px;
+            padding: 15px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+        .btn-premio:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+        }
+        .btn-secondary {
+            background: linear-gradient(45deg, #f72585, #7209b7);
+            color: #fff;
+        }
+        .btn-small {
+            padding: 8px 12px;
+            font-size: 12px;
+            width: auto;
+            margin: 2px;
+        }
+        .btn-link {
+            background: none;
+            border: none;
+            color: #38bdf8;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .btn-borrar {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 1px solid #ef4444;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-borrar:hover {
+            background: #ef4444;
+            color: white;
+        }
+        .mensaje {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #f9c74f;
+            height: 20px;
+        }
+        .cambio-form {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #00f5d4;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .cambio-form:hover { color: #00bbf9; }
+
+        #recuperarForm {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background: #1e293b;
+            border-radius: 8px;
+        }
+
+        .barra-usuario {
+            max-width: 1100px;
+            margin: 0 auto 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 12px 25px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(0, 187, 249, 0.3);
+            position: relative; z-index: 5;
+            backdrop-filter: blur(8px);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .nombre-usuario {
+            font-weight: 600;
+            color: #00f5d4;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .estado-ticket {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            border: 1px solid #4ade80;
+        }
+        .estado-sin-ticket {
+            background: rgba(248, 113, 113, 0.2);
+            color: #f87171;
+            border: 1px solid #f87171;
+        }
+        .btn-salir {
+            background: rgba(220, 53, 69, 0.2);
+            color: #ff6b6b;
+            border: 1px solid #ff6b6b;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .btn-salir:hover {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .karaoke-container { display: none; position: relative; z-index: 2; }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00f5d4, #00bbf9, #7209b7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 12px;
+            background: rgba(30, 41, 59, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #334155;
+        }
+        @media (max-width: 600px) { .search-container { grid-template-columns: 1fr; } }
+        .input-link {
+            padding: 14px 15px;
+            border-radius: 10px;
+            border: 1px solid #475569;
+            background: #1e293b;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+        }
+        .btn-cargar {
+            background: linear-gradient(45deg, #00f5d4, #00bbf9);
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .btn-cargar:hover { transform: scale(1.03); }
+
+        /* VIDEO AGRANDADO + CONTROLES */
+        #player-container {
+            max-width: 1000px;
+            margin: 0 auto 25px;
+            background: #000;
+            padding: 12px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 245, 212, 0.15);
+            min-height: 550px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        #player-container.fullscreen-mode {
+            max-width: 100%;
+            width: 100%;
+            height: 85vh;
+            min-height: 85vh;
+            border-radius: 0;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            background: #000;
+        }
+        #player { 
+            width: 100%; 
+            height: 100%; 
+            border-radius: 12px; 
+            overflow: hidden;
+            flex: 1;
+        }
+        #player-container.fullscreen-mode #player {
+            border-radius: 8px;
+            max-width: 900px;
+            max-height: 70vh;
+        }
+        .btn-pantalla {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            border: 1px solid #00f5d4;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+        .btn-pantalla:hover {
+            background: #00f5d4;
+            color: #000;
+        }
+        .datos-en-pantalla {
+            width: 100%;
+            max-width: 900px;
+            margin-top: 15px;
+            background: rgba(0,0,0,0.85);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 245, 212, 0.3);
+            display: none;
+        }
+        #player-container.fullscreen-mode .datos-en-pantalla {
+            display: block;
+        }
+
+        .analizador-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 25px;
+            background: rgba(15, 52, 96, 0.4);
+            border-radius: 18px;
+            border: 1px solid rgba(0, 245, 212, 0.2);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+        }
+        .analizador-container h3 {
+            color: #00f5d4;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .graficos-dobles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 700px) { .graficos-dobles { grid-template-columns: 1fr; } }
+        .canvas-wrapper {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+        .canvas-wrapper h4 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        canvas { width: 100%; height: 140px; border-radius: 8px; }
+
+        .datos-vocal {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            text-align: center;
+        }
+        .dato-item {
+            background: rgba(255,255,255,0.05);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .dato-label { font-size: 12px; color: #94a3b8; margin-bottom: 5px; }
+        .dato-valor { font-size: 22px; font-weight: bold; color: #00f5d4; }
+        .dato-nota { font-size: 28px; color: #f9c74f; }
+
+        .comentario-profesional {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(114, 9, 183, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid #7209b7;
+            font-style: italic;
+            color: #e0e7ff;
+            min-height: 24px;
+        }
+
+        .letra-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 18px;
+            border: 1px solid #415a77;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            line-height: 1.5;
+            text-align: center;
+            color: #cbd5e1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .puntaje-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(114, 9, 183, 0.2), rgba(247, 37, 133, 0.1));
+            border-radius: 18px;
+            border: 1px solid rgba(247, 37, 133, 0.3);
+            text-align: center;
+        }
+        .puntuacion-principal {
+            font-size: 80px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #f72585, #7209b7, #00bbf9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 15px 0;
+        }
+        .barras-puntuacion {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+        @media (max-width: 600px) { .barras-puntuacion { grid-template-columns: 1fr 1fr; } }
+        .barra-item {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 12px;
+        }
+        .barra-titulo { font-size: 14px; margin-bottom: 8px; color: #cbd5e1; }
+        .barra-fondo {
+            width: 100%;
+            height: 12px;
+            background: #334155;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+        .barra-llenado {
+            height: 100%;
+            background: linear-gradient(90deg, #00f5d4, #00bbf9);
+            border-radius: 6px;
+            transition: width 0.5s ease;
+        }
+        .valor-numero { font-weight: bold; color: #00f5d4; }
+
+        .estadisticas-container {
+            max-width: 900px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        .stats-box {
+            background: rgba(30, 64, 175, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        .stats-box.premio {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 179, 0, 0.05));
+            border: 2px solid #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+        }
+        .stats-box h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .stats-box.premio h3 { color: #ffd700; font-size: 22px; }
+        .progreso-item, .ranking-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            margin: 8px 0;
+            transition: transform 0.2s;
+        }
+        .progreso-item:hover, .ranking-item:hover { transform: translateX(5px); }
+        .posicion { font-weight: bold; font-size: 18px; color: #facc15; width: 40px; }
+        .posicion.oro { color: #ffd700; font-size: 22px; }
+        .posicion.plata { color: #c0c0c0; font-size: 20px; }
+        .posicion.bronce { color: #cd7f32; font-size: 18px; }
+        .info-cancion { flex: 1; margin: 0 10px; }
+        .nombre-cancion { font-weight: 500; }
+        .fecha-cancion { font-size: 12px; color: #94a3b8; }
+        .puntos { font-weight: bold; font-size: 18px; color: #4ade80; }
+        .ticket-info { font-size: 11px; color: #fbbf24; font-weight: bold; }
+        .sin-derecho { color: #f87171; font-weight: bold; font-size: 12px; }
+        .mejora { color: #4ade80; font-weight: bold; }
+        .empeora { color: #f87171; font-weight: bold; }
+
+        .respaldo-container {
+            max-width: 900px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marca-agua">ALAN JOSE</div>
+
+    <div class="banner-premio">
+        🏆 CONCURSO NACIONAL: GANÁ $1.000.000 🏆
+        <div class="sub-premio">Los 50 mejores clasificados participan | Ticket valor $4.000</div>
+    </div>
+
+    <div class="login-container" id="pantallaLogin">
+        <h2>KARAOKE PRO N3</h2>
+        <div class="input-group">
+            <label>Usuario / Nombre Artístico</label>
+            <input type="text" id="usuario" placeholder="Tu nombre para el ranking">
+        </div>
+        <div class="input-group">
+            <label>Contraseña</label>
+            <input type="password" id="clave" placeholder="Tu clave de acceso">
+        </div>
+        <div class="mensaje" id="mensajeSistema"></div>
+        <button class="btn" id="btnAccion">INGRESAR</button>
+        <button class="btn btn-secondary" id="btnCambiar">CREAR CUENTA</button>
+        <div class="cambio-form" id="textoCambio">¿No tienes cuenta? Regístrate aquí</div>
+        
+        <button class="btn-link" id="btnRecuperar">❓ ¿Olvidaste usuario o contraseña?</button>
+
+        <div id="recuperarForm">
+            <input type="text" id="datoRecuperar" class="input-link" placeholder="Escribí tu usuario...">
+            <button class="btn btn-small" id="btnEnviarRecuperar">📩 ENVIAR SOLICITUD</button>
+            <button class="btn btn-small" id="btnVolverLogin">🔙 VOLVER</button>
+            <p id="mensajeRecuperar" style="font-size:12px; margin-top:8px;"></p>
+        </div>
+
+        <button class="btn btn-premio" id="btnComprarTicketLogin" style="margin-top:20px;">🎟️ COMPRAR TICKET PARA EL PREMIO</button>
+    </div>
+
+    <div class="karaoke-container" id="pantallaPrincipal">
+        <div class="barra-usuario">
+            <div class="nombre-usuario">
+                👤 <span id="nombreUsuarioActual"></span>
+                <span id="estadoTicketBadge" class="estado-ticket estado-sin-ticket">❌ SIN TICKET</span>
+            </div>
+            <div>
+                <button class="btn btn-small" id="btnComprarTicket">🎟️ COMPRAR TICKET</button>
+                <button class="btn btn-small" id="btnDescargar">📥 Respaldar</button>
+                <button class="btn-salir" id="btnSalir">Cerrar</button>
+            </div>
+        </div>
+
+        <h1>🎤 KARAOKE PRO - NIVEL 3 🧠</h1>
+        <p class="subtitle">Capacidad Ilimitada • Análisis Profesional • Concurso $1.000.000</p>
+
+        <div class="search-container">
+            <input type="text" id="enlaceVideo" class="input-link" placeholder="🔗 Pegá enlace de YouTube...">
+            
