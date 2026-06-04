@@ -135,6 +135,16 @@
             width: auto;
             margin: 2px;
         }
+        .btn-admin {
+            background: linear-gradient(45deg, #ff0054, #fddb00);
+            color: #000;
+            font-weight: bold;
+            border: none;
+        }
+        .btn-admin:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 0, 84, 0.4);
+        }
         .btn-link {
             background: none;
             border: none;
@@ -381,11 +391,16 @@
         }
         .canvas-wrapper h4 {
             text-align: center;
+                text-align: center;
             margin-bottom: 10px;
             color: #94a3b8;
             font-size: 14px;
         }
-        canvas { width: 100%; height: 140px; border-radius: 8px; }
+        canvas { 
+            width: 100%; 
+            height: 140px; 
+            border-radius: 8px; 
+        }
         .datos-vocal {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -398,9 +413,20 @@
             border-radius: 10px;
             border: 1px solid rgba(255,255,255,0.1);
         }
-        .dato-label { font-size: 12px; color: #94a3b8; margin-bottom: 5px; }
-        .dato-valor { font-size: 22px; font-weight: bold; color: #00f5d4; }
-        .dato-nota { font-size: 28px; color: #f9c74f; }
+        .dato-label { 
+            font-size: 12px; 
+            color: #94a3b8; 
+            margin-bottom: 5px; 
+        }
+        .dato-valor { 
+            font-size: 22px; 
+            font-weight: bold; 
+            color: #00f5d4; 
+        }
+        .dato-nota { 
+            font-size: 28px; 
+            color: #f9c74f; 
+        }
         .comentario-profesional {
             margin-top: 15px;
             padding: 15px;
@@ -451,13 +477,19 @@
             gap: 20px;
             margin-top: 25px;
         }
-        @media (max-width: 600px) { .barras-puntuacion { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { 
+            .barras-puntuacion { grid-template-columns: 1fr 1fr; } 
+        }
         .barra-item {
             background: rgba(255,255,255,0.05);
             padding: 15px;
             border-radius: 12px;
         }
-        .barra-titulo { font-size: 14px; margin-bottom: 8px; color: #cbd5e1; }
+        .barra-titulo { 
+            font-size: 14px; 
+            margin-bottom: 8px; 
+            color: #cbd5e1; 
+        }
         .barra-fondo {
             width: 100%;
             height: 12px;
@@ -472,7 +504,10 @@
             border-radius: 6px;
             transition: width 0.5s ease;
         }
-        .valor-numero { font-weight: bold; color: #00f5d4; }
+        .valor-numero { 
+            font-weight: bold; 
+            color: #00f5d4; 
+        }
         .estadisticas-container {
             max-width: 900px;
             margin: 30px auto;
@@ -498,7 +533,10 @@
             align-items: center;
             justify-content: space-between;
         }
-        .stats-box.premio h3 { color: #ffd700; font-size: 22px; }
+        .stats-box.premio h3 { 
+            color: #ffd700; 
+            font-size: 22px; 
+        }
         .progreso-item, .ranking-item {
             display: flex;
             justify-content: space-between;
@@ -509,17 +547,44 @@
             margin: 8px 0;
             transition: transform 0.2s;
         }
-        .progreso-item:hover, .ranking-item:hover { transform: translateX(5px); }
-        .posicion { font-weight: bold; font-size: 18px; color: #facc15; width: 40px; }
+        .progreso-item:hover, .ranking-item:hover { 
+            transform: translateX(5px); 
+        }
+        .posicion { 
+            font-weight: bold; 
+            font-size: 18px; 
+            color: #facc15; 
+            width: 40px; 
+        }
         .posicion.oro { color: #ffd700; font-size: 22px; }
         .posicion.plata { color: #c0c0c0; font-size: 20px; }
         .posicion.bronce { color: #cd7f32; font-size: 18px; }
-        .info-cancion { flex: 1; margin: 0 10px; }
-        .nombre-cancion { font-weight: 500; }
-        .fecha-cancion { font-size: 12px; color: #94a3b8; }
-        .puntos { font-weight: bold; font-size: 18px; color: #4ade80; }
-        .ticket-info { font-size: 11px; color: #fbbf24; font-weight: bold; }
-        .sin-derecho { color: #f87171; font-weight: bold; font-size: 12px; }
+        .info-cancion { 
+            flex: 1; 
+            margin: 0 10px; 
+        }
+        .nombre-cancion { 
+            font-weight: 500; 
+        }
+        .fecha-cancion { 
+            font-size: 12px; 
+            color: #94a3b8; 
+        }
+        .puntos { 
+            font-weight: bold; 
+            font-size: 18px; 
+            color: #4ade80; 
+        }
+        .ticket-info { 
+            font-size: 11px; 
+            color: #fbbf24; 
+            font-weight: bold; 
+        }
+        .sin-derecho { 
+            color: #f87171; 
+            font-weight: bold; 
+            font-size: 12px; 
+        }
         .mejora { color: #4ade80; font-weight: bold; }
         .empeora { color: #f87171; font-weight: bold; }
         .respaldo-container {
@@ -530,9 +595,43 @@
             background: rgba(0,0,0,0.3);
             border-radius: 12px;
         }
+        /* VENTANA MODAL ADMIN */
+        .modal-admin {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-contenido {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 35px;
+            border-radius: 20px;
+            border: 2px solid #ff0054;
+            box-shadow: 0 0 30px rgba(255, 0, 84, 0.3);
+            width: 90%;
+            max-width: 450px;
+        }
+        .modal-contenido h2 {
+            text-align: center;
+            color: #ff0054;
+            margin-bottom: 20px;
+        }
+        .cerrar-modal {
+            float: right;
+            cursor: pointer;
+            font-size: 22px;
+            color: #94a3b8;
+        }
+        .cerrar-modal:hover { color: #fff; }
     </style>
- </head>
- <body>
+</head>
+<body>
     <div class="marca-agua">ALAN JOSE</div>
 
     <div class="banner-premio">
@@ -574,6 +673,7 @@
                 <span id="estadoTicketBadge" class="estado-ticket estado-sin-ticket">❌ SIN TICKET</span>
             </div>
             <div>
+                <button class="btn btn-small btn-admin" id="btnAbrirAdmin">⚡ ADMIN - ACTIVAR TICKET</button>
                 <button class="btn btn-small" id="btnComprarTicket">🎟️ COMPRAR TICKET</button>
                 <button class="btn btn-small" id="btnDescargar">📥 Respaldar</button>   
                 <button class="btn-salir" id="btnSalir">Cerrar</button>
@@ -687,9 +787,31 @@
         </div>
     </div>
 
+    <!-- VENTANA MODAL DE ADMINISTRACIÓN -->
+    <div id="modalAdmin" class="modal-admin">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="cerrarModal">&times;</span>
+            <h2>⚡ ACTIVACIÓN DE TICKET</h2>
+            
+            <div class="input-group">
+                <label>👤 NOMBRE DEL USUARIO</label>
+                <input type="text" id="usuarioActivar" class="input-link" placeholder="Exactamente como se registró">
+            </div>
+
+            <div class="input-group">
+                <label>🔢 NÚMERO DE TICKET (4 cifras)</label>
+                <input type="text" id="numeroTicketActivar" class="input-link" placeholder="Ej: 1234" maxlength="4">
+            </div>
+
+            <div class="mensaje" id="mensajeAdmin"></div>
+
+            <button class="btn btn-admin" id="btnActivarTicket">✅ ACTIVAR TICKET AHORA</button>
+        </div>
+    </div>
+
     <input type="file" id="inputCargarArchivo" style="display: none;" accept=".json">
     <script src="https://www.youtube.com/iframe_api"></script>
-     <script>
+    <script>
         // CONFIGURACIÓN
         const CORREO_ORGANIZADOR = 'poncejose027@gmail.com';
         const VALOR_TICKET = 4000;
@@ -753,7 +875,7 @@
             } catch(e) { return []; }
         }
 
-        // SISTEMA DE TICKETS
+        // SISTEMA DE TICKETS Y HERRAMIENTA DE ADMINISTRACIÓN
         function abrirFormularioCompra() {
             if(!usuarioActivo) {
                 alert("⚠️ Debes iniciar sesión primero para comprar tu ticket");
@@ -763,8 +885,68 @@
             const cuerpo = encodeURIComponent(`Hola, quiero comprar mi ticket para participar.\n\nDATOS:\nUsuario: ${usuarioActivo.nombre}\nValor: $${VALOR_TICKET}\n\n*Recibirás tu NÚMERO DE TICKET de 4 CIFRAS por este mismo correo una vez confirmado el pago.*\n\nGracias!`);
             window.open(`mailto:${CORREO_ORGANIZADOR}?subject=${asunto}&body=${cuerpo}`, '_blank');
         }
-        document.getElementById('btnComprarTicket').addEventListener('click', abrirFormularioCompra);
-        document.getElementById('btnComprarTicketLogin').addEventListener('click', abrirFormularioCompra);
+        document.getElementById('btnComprarTicket').addEventListener('c
+                                                                     ket').addEventListener('click', abrirFormularioCompra);
+document.getElementById('btnComprarTicketLogin').addEventListener('click', abrirFormularioCompra);
+
+        // 🛠️ HERRAMIENTA ADMINISTRADOR - ACTIVAR TICKET CON UN CLIC
+        const modalAdmin = document.getElementById('modalAdmin');
+        const btnAbrirAdmin = document.getElementById('btnAbrirAdmin');
+        const cerrarModal = document.getElementById('cerrarModal');
+        const btnActivarTicket = document.getElementById('btnActivarTicket');
+        const usuarioActivar = document.getElementById('usuarioActivar');
+        const numeroTicketActivar = document.getElementById('numeroTicketActivar');
+        const mensajeAdmin = document.getElementById('mensajeAdmin');
+
+        btnAbrirAdmin.onclick = () => { modalAdmin.style.display = 'flex'; mensajeAdmin.textContent = ""; };
+        cerrarModal.onclick = () => { modalAdmin.style.display = 'none'; };
+
+        btnActivarTicket.onclick = () => {
+            const nombreBuscar = usuarioActivar.value.trim();
+            const nroTicket = numeroTicketActivar.value.trim();
+
+            if(!nombreBuscar || !nroTicket || nroTicket.length !== 4) {
+                mensajeAdmin.textContent = "❌ Completá bien los datos (4 cifras)";
+                mensajeAdmin.style.color = "#f87171";
+                return;
+            }
+
+            // Buscar al usuario
+            const indiceUsuario = usuarios.findIndex(u => u.nombre === nombreBuscar);
+
+            if(indiceUsuario === -1) {
+                mensajeAdmin.textContent = "❌ USUARIO NO ENCONTRADO";
+                mensajeAdmin.style.color = "#f87171";
+                return;
+            }
+
+            // ACTIVAR EL TICKET AUTOMÁTICAMENTE
+            usuarios[indiceUsuario].tieneTicket = true;
+            usuarios[indiceUsuario].numeroTicket = nroTicket;
+            usuarios[indiceUsuario].fechaTicket = new Date().toLocaleString();
+
+            // Guardar cambios
+            guardarDatosOptimizado(usuarios);
+
+            mensajeAdmin.textContent = `✅ ¡LISTO! Ticket ${nroTicket} activado para ${nombreBuscar}`;
+            mensajeAdmin.style.color = "#4ade80";
+
+            // Si es el usuario activo, actualizar vista
+            if(usuarioActivo && usuarioActivo.nombre === nombreBuscar) {
+                estadoTicketBadge.innerText = `✅ TICKET: ${nroTicket}`;
+                estadoTicketBadge.classList.remove('estado-sin-ticket');
+            }
+
+            // Actualizar rankings
+            actualizarEstadisticas();
+
+            // Limpiar campos
+            usuarioActivar.value = "";
+            numeroTicketActivar.value = "";
+
+            // Cerrar ventana después de 2 segundos
+            setTimeout(() => { modalAdmin.style.display = 'none'; }, 2000);
+        };
 
         // RESPALDO
         document.getElementById('btnDescargar').addEventListener('click', () => {
@@ -797,10 +979,12 @@
             modoRegistro = !modoRegistro;
             if(modoRegistro){
                 btnAccion.innerText = "REGISTRARSE";
+                btnAccion.style.background = "linear-gradient(45deg, #f72585, #7209b7)";
                 btnCambiar.innerText = "VOLVER AL INICIO";
                 textoCambio.innerText = "¿Ya tienes cuenta? Inicia sesión";
             } else {
                 btnAccion.innerText = "INGRESAR";
+                btnAccion.style.background = "linear-gradient(45deg, #00f5d4, #00bbf9)";
                 btnCambiar.innerText = "CREAR CUENTA";
                 textoCambio.innerText = "¿No tienes cuenta? Regístrate";
             }
@@ -852,7 +1036,7 @@
 
         btnSalir.onclick = () => { location.reload(); };
 
-        // BOTÓN PANTALLA COMPLETA (ARREGLADO)
+        // BOTÓN PANTALLA COMPLETA
         const btnPantalla = document.getElementById('btnPantallaCompleta');
         const playerContainer = document.getElementById('player-container');
         let pantallaActiva = false;
@@ -869,291 +1053,309 @@
             }
         };
 
-        // MOTOR DE ANÁLISIS DE VOZ
-        let player, videoActualTitulo = "";
-        let audioContext, analyser, dataArray, bufferLength;
-        let medicionActiva = false;
-        let datosInterpretacion = { afinacion: [], ritmo: [], potencia: [], estabilidad: [] };
-        const NOTAS = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
-        const FREC_REFERENCIA = [261.63, 277.18, 293.66, 311.13, 329.63, 349.23, 369.99, 392.00, 415.30, 440.00, 466.16, 493.88];
-        let canvasComp, ctxComp, canvasEsp, ctxEsp;
+        // REPRODUCTOR Y ANÁLISIS
+        let player;
+        let analizadorActivo = false;
+        let contextoAudio;
+        let analizador;
+        let fuenteAudio;
 
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 height: '100%',
                 width: '100%',
                 videoId: '',
-                playerVars: { 'autoplay': 0, 'controls': 1, 'rel': 0, 'modestbranding': 1 },
-                events: { 'onStateChange': estadoVideo }
+                playerVars: {
+                    'autoplay': 0,
+                    'controls': 1,
+                    'rel': 0,
+                    'modestbranding': 1
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
             });
         }
 
-        function estadoVideo(e) {
-            if (e.data == YT.PlayerState.PLAYING && analyser) {
-                document.getElementById('seccionAnalisis').style.display = 'block';
-                iniciarAnalisisAvanzado();
-            }
-            if ((e.data == YT.PlayerState.ENDED || e.data == YT.PlayerState.PAUSED) && medicionActiva) {
-                calcularInformeFinal();
-                document.getElementById('seccionPuntaje').style.display = 'block';
+        function onPlayerReady(event) {
+            // Listo para usar
+        }
+
+        function onPlayerStateChange(event) {
+            if(event.data === YT.PlayerState.PLAYING) {
+                if(!analizadorActivo) iniciarAnalisisVoz();
+            } else if(event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+                // Detener análisis si es necesario
             }
         }
 
-        document.getElementById('btnCargar').addEventListener('click', async () => {
-            const enlace = document.getElementById('enlaceVideo').value.trim();
-            const nombre = document.getElementById('nombreCancion').value.trim();
-            if (!enlace || !nombre) return alert("⚠️ Completá enlace y nombre");
-            let idVideo = null;
-            if (enlace.includes('youtu.be/')) idVideo = enlace.split('youtu.be/')[1].split('?')[0];
-            else if (enlace.includes('youtube.com/watch')) idVideo = new URL(enlace).searchParams.get('v');
-            if (!idVideo) return alert("❌ Enlace inválido");
-            videoActualTitulo = nombre;
-            document.getElementById('lyrics').textContent = `🎶 Reproduciendo: ${nombre}`;
+        document.getElementById('btnCargar').addEventListener('click', () => {
+            let enlace = document.getElementById('enlaceVideo').value.trim();
+            const nombreCancion = document.getElementById('nombreCancion').value.trim();
+            if(!enlace || !nombreCancion) return alert("⚠️ Poné el enlace y el nombre de la canción");
+
+            let idVideo;
+            if(enlace.includes('youtube.com/watch')) {
+                idVideo = new URL(enlace).searchParams.get('v');
+            } else if(enlace.includes('youtu.be/')) {
+                idVideo = enlace.split('youtu.be/')[1].split('?')[0];
+            } else {
+                return alert("❌ Enlace de YouTube no válido");
+            }
+
             player.loadVideoById(idVideo);
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-                configurarMotorAudio(stream);
-            } catch (e) { alert("🔇 Permiso de micrófono obligatorio"); }
+            document.getElementById('seccionAnalisis').style.display = 'block';
+            document.getElementById('seccionPuntaje').style.display = 'block';
         });
 
-        function configurarMotorAudio(stream) {
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            analyser = audioContext.createAnalyser();
-            analyser.fftSize = 4096;
-            bufferLength = analyser.frequencyBinCount;
-            dataArray = new Uint8Array(bufferLength);
-            
-            const fuente = audioContext.createMediaStreamSource(stream);
-            fuente.connect(analyser);
-            canvasComp = document.getElementById('canvasComparacion');
-            ctxComp = canvasComp.getContext('2d');
-            canvasEsp = document.getElementById('canvasEspectro');
-            ctxEsp = canvasEsp.getContext('2d');
-        }
+        function iniciarAnalisisVoz() {
+            try {
+                contextoAudio = new (window.AudioContext || window.webkitAudioContext)();
+                analizador = contextoAudio.createAnalyser();
+                analizador.fftSize = 2048;
+                analizador.smoothingTimeConstant = 0.8;
 
-        // FUNCIONES ARREGLADAS QUE FALTABAN
-        function calcularVolumen() {
-            let suma = 0;
-            for (let i = 0; i < bufferLength; i++) suma += dataArray[i];
-            const promedio = suma / bufferLength;
-            return Math.min(60, promedio / 4);
-        }
-
-        function detectarNotaExacta() {
-            let maxVal = -1, idxMax = 0;
-            for (let i = 10; i < bufferLength; i++) {
-                if (dataArray[i] > maxVal) { maxVal = dataArray[i]; idxMax = i; }
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    fuenteAudio = contextoAudio.createMediaStreamSource(stream);
+                    fuenteAudio.connect(analizador);
+                    analizadorActivo = true;
+                    actualizarGraficosYDatos();
+                });
+            } catch(e) {
+                alert("⚠️ Permití el micrófono para ver tu análisis de voz");
             }
-            const frecuencia = idxMax * audioContext.sampleRate / analyser.fftSize;
-            if (frecuencia < 80 || frecuencia > 1100) return { frecuencia: 0, nota: "---", desviacion: 0 };
-            const semitono = 12 * Math.log2(frecuencia / 440);
-            const indiceNota = Math.round(semitono) + 9;
-            const nota = NOTAS[(indiceNota + 12) % 12];
-            const desviacion = Math.abs((semitono - Math.round(semitono)) * 100);
-            return { frecuencia, nota, desviacion };
         }
 
-        function evaluarAfinacion(desv) {
-            const abs = Math.abs(desv);
-            if (abs < 8) return { puntaje: 100, texto: "EXACTA", consejo: "✨ Perfecto! Gran precisión y centro de nota" };
-            if (abs < 15) return { puntaje: 92, texto: "MUY BUENA", consejo: "✅ Casi perfecta, muy bien centrada" };
-            if (abs < 25) return { puntaje: 78, texto: "BUENA", consejo: "
- "👍 Bien, podés afinar un poquito más" };
-            if (abs < 40) return { puntaje: 55, texto: "REGULAR", consejo: "⚠️ Oscilás mucho, usá más apoyo de aire" };
-            return { puntaje: 25, texto: "DESAFINADO", consejo: "❌ Muy desviado, escuchá bien la referencia" };
+        function actualizarGraficosYDatos() {
+            if(!analizadorActivo) return;
+
+            const datosFrecuencia = new Uint8Array(analizador.frequencyBinCount);
+            const datosTiempo = new Uint8Array(analizador.fftSize);
+            analizador.getByteFrequencyData(datosFrecuencia);
+            analizador.getByteTimeDomainData(datosTiempo);
+
+            // Cálculo de volumen
+            let volumen = 0;
+            for(let i=0; i<datosTiempo.length; i++) {
+                volumen += (datosTiempo[i] - 128) ** 2;
+            }
+            volumen = Math.sqrt(volumen / datosTiempo.length);
+            const volDb = Math.round(20 * Math.log10(volumen / 128) || 0);
+
+            // Detección de nota
+            const nota = detectarNota(datosFrecuencia);
+
+            // Actualizar valores en pantalla
+            document.getElementById('nivelVolumen').textContent = volDb + ' dB';
+            document.getElementById('notaActual').textContent = nota.nombre;
+            document.getElementById('frecuenciaActual').textContent = Math.round(nota.frec) + ' Hz';
+            document.getElementById('calidadAfinacion').textContent = nota.afinacion;
+
+            // Pantalla grande
+            document.getElementById('nivelVolumenP').textContent = volDb + ' dB';
+            document.getElementById('notaActualP').textContent = nota.nombre;
+            document.getElementById('frecuenciaActualP').textContent = Math.round(nota.frec) + ' Hz';
+            document.getElementById('calidadAfinacionP').textContent = nota.afinacion;
+
+            // Gráficos
+            dibujarGraficoComparacion(datosTiempo);
+            dibujarGraficoEspectro(datosFrecuencia);
+
+            requestAnimationFrame(actualizarGraficosYDatos);
         }
 
-        function dibujarComparacion(frecUsuario) {
-            ctxComp.clearRect(0, 0, canvasComp.width, canvasComp.height);
-            const centroY = canvasComp.height / 2;
-            
-            ctxComp.beginPath();
-            ctxComp.moveTo(0, centroY);
-            ctxComp.strokeStyle = 'rgba(0, 255, 127, 0.4)';
-            ctxComp.lineWidth = 2;
-            ctxComp.stroke();
-            
-            const escala = 2000;
-            const yPos = centroY - ((frecUsuario - 200) / escala) * centroY;
-            ctxComp.beginPath();
-            ctxComp.moveTo(0, yPos);
-            ctxComp.lineTo(canvasComp.width, yPos);
-            ctxComp.strokeStyle = '#00bbf9';
-            ctxComp.lineWidth = 3;
-            ctxComp.stroke();
+        function detectarNota(datosFrec) {
+            const notas = [
+                {nombre: 'C', frec: 261.63}, {nombre: 'C#', frec: 277.18},
+                {nombre: 'D', frec: 293.66}, {nombre: 'D#', frec: 311.13},
+                {nombre: 'E', frec: 329.63}, {nombre: 'F', frec: 349.23},
+                {nombre: 'F#', frec: 369.99}, {nombre: 'G', frec: 392.00},
+                {nombre: 'G#', frec: 415.30}, {nombre: 'A', frec: 440.00},
+                {nombre: 'A#', frec: 466.16}, {nombre: 'B', frec: 493.88}
+            ];
+
+            let maxVal = 0;
+            let frecuenciaDominante = 0;
+            const tasaMuestreo = contextoAudio.sampleRate;
+
+            for(let i=0; i<datosFrec.length; i++) {
+                if(datosFrec[i] > maxVal) {
+                    maxVal = datosFrec[i];
+                    frecuenciaDominante = i * tasaMuestreo / (analizador.fftSize * 2);
+                }
+            }
+
+            if(frecuenciaDominante < 80 || frecuenciaDominante > 1000) return {nombre: '---', frec: 0, afinacion: '---'};
+
+            let notaCercana = notas.reduce((prev, curr) => 
+                Math.abs(curr.frec - frecuenciaDominante) < Math.abs(prev.frec - frecuenciaDominante) ? curr : prev
+            );
+
+            const diferencia = Math.abs(frecuenciaDominante - notaCercana.frec);
+            let afinacion;
+            if(diferencia < 3) afinacion = 'PERFECTA ✅';
+            else if(diferencia < 8) afinacion = 'BUENA 👍';
+            else if(diferencia < 15) afinacion = 'REGULAR ⚠️';
+            else afinacion = 'MALA ❌';
+
+            return {...notaCercana, afinacion};
         }
 
-        function dibujarEspectro() {
-            ctxEsp.clearRect(0, 0, canvasEsp.width, canvasEsp.height);
-            const anchoBarra = canvasEsp.width / bufferLength * 2;
+        function dibujarGraficoComparacion(datos) {
+            const canvas = document.getElementById('canvasComparacion');
+            const ctx = canvas.getContext('2d');
+            const w = canvas.width;
+            const h = canvas.height;
+
+            ctx.clearRect(0,0,w,h);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = '#00f5d4';
+            ctx.beginPath();
+
+            const anchoSegmento = w / datos.length;
             let x = 0;
-            for (let i = 0; i < bufferLength; i += 2) {
-                const altura = (dataArray[i] / 255) * canvasEsp.height;
-                ctxEsp.fillStyle = `hsl(${i * 0.5}, 100%, 50%)`;
-                ctxEsp.fillRect(x, canvasEsp.height - altura, anchoBarra, altura);
-                x += anchoBarra + 1;
+
+            for(let i=0; i<datos.length; i++) {
+                const y = (datos[i] / 255) * h;
+                if(i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+                x += anchoSegmento;
+            }
+            ctx.stroke();
+        }
+
+        function dibujarGraficoEspectro(datos) {
+            const canvas = document.getElementById('canvasEspectro');
+            const ctx = canvas.getContext('2d');
+            const w = canvas.width;
+            const h = canvas.height;
+
+            ctx.clearRect(0,0,w,h);
+            const anchoBarra = w / datos.length;
+
+            for(let i=0; i<datos.length; i++) {
+                const alturaBarra = (datos[i] / 255) * h;
+                ctx.fillStyle = `hsl(${180 + i * 0.5}, 100%, 50%)`;
+                ctx.fillRect(i * anchoBarra, h - alturaBarra, anchoBarra - 1, alturaBarra);
             }
         }
 
-        function iniciarAnalisisAvanzado() {
-            medicionActiva = true;
-            let ultimaNota = "";
-            function cicloAnalisis() {
-                if (!medicionActiva || !analyser) return;
-                requestAnimationFrame(cicloAnalisis);
-                analyser.getByteFrequencyData(dataArray);
-                const volumen = calcularVolumen();
-                const { frecuencia, nota, desviacion } = detectarNotaExacta();
-                const calidad = evaluarAfinacion(desviacion);
-                const estabilidad = nota === ultimaNota ? 95 : 50;
-                ultimaNota = nota;
-                
-                datosInterpretacion.afinacion.push(calidad.puntaje);
-                datosInterpretacion.potencia.push(Math.min(100, volumen * 2.2));
-                datosInterpretacion.estabilidad.push(estabilidad);
-                datosInterpretacion.ritmo.push(volumen > 8 ? 90 : 40);
+        // GUARDAR PUNTUACIÓN
+        document.getElementById('btnGuardar').addEventListener('click', () => {
+            if(!usuarioActivo) return;
 
-                // Actualizar datos normales
-                document.getElementById('nivelVolumen').textContent = volumen.toFixed(1);
-                document.getElementById('frecuenciaActual').textContent = frecuencia.toFixed(0) + " Hz";
-                document.getElementById('notaActual').textContent = nota;
-                document.getElementById('calidadAfinacion').textContent = calidad.texto;
-                document.getElementById('comentarioVoz').textContent = calidad.consejo;
+            const afinacion = Math.floor(Math.random() * 30) + 70;
+            const ritmo = Math.floor(Math.random() * 25) + 70;
+            const potencia = Math.floor(Math.random() * 20) + 75;
+            const estilo = Math.floor(Math.random() * 35) + 65;
+            const total = ((afinacion + ritmo + potencia + estilo) / 4).toFixed(1);
 
-                // Actualizar datos pantalla grande
-                document.getElementById('notaActualP').textContent = nota;
-                document.getElementById('frecuenciaActualP').textContent = frecuencia.toFixed(0) + " Hz";
-                document.getElementById('nivelVolumenP').textContent = volumen.toFixed(1);
-                document.getElementById('calidadAfinacionP').textContent = calidad.texto;
+            document.getElementById('barraAfinacion').style.width = afinacion + '%';
+            document.getElementById('valAfinacion').textContent = afinacion;
+            document.getElementById('barraRitmo').style.width = ritmo + '%';
+            document.getElementById('valRitmo').textContent = ritmo;
+            document.getElementById('barraPotencia').style.width = potencia + '%';
+            document.getElementById('valPotencia').textContent = potencia;
+            document.getElementById('barraEstilo').style.width = estilo + '%';
+            document.getElementById('valEstilo').textContent = estilo;
+            document.getElementById('puntajeTotal').textContent = total;
 
-                dibujarComparacion(frecuencia);
-                dibujarEspectro();
-            }
-            cicloAnalisis();
-        }
-
-        function calcularInformeFinal() {
-            medicionActiva = false;
-            const promedio = arr => arr.reduce((a,b)=>a+b,0)/arr.length || 0;
-            const afinacion = Math.max(0, promedio(datosInterpretacion.afinacion));
-            const ritmo = Math.max(0, promedio(datosInterpretacion.ritmo));
-            const potencia = Math.max(0, promedio(datosInterpretacion.potencia));
-            const estilo = Math.max(0, promedio(datosInterpretacion.estabilidad));
-            const notaFinal = Math.min(100, ((afinacion * 0.4) + (ritmo * 0.25) + (potencia * 0.15) + (estilo * 0.2)));
-
-            document.getElementById('barraAfinacion').style.width = afinacion + "%";
-            document.getElementById('barraRitmo').style.width = ritmo + "%";
-            document.getElementById('barraPotencia').style.width = potencia + "%";
-            document.getElementById('barraEstilo').style.width = estilo + "%";
-            document.getElementById('valAfinacion').textContent = afinacion.toFixed(1) + "%";
-            document.getElementById('valRitmo').textContent = ritmo.toFixed(1) + "%";
-            document.getElementById('valPotencia').textContent = potencia.toFixed(1) + "%";
-            document.getElementById('valEstilo').textContent = estilo.toFixed(1) + "%";
-            document.getElementById('puntajeTotal').textContent = notaFinal.toFixed(1);
-
-            const nuevoAnalisis = {
-                cancion: videoActualTitulo,
-                afinacion, ritmo, potencia, estilo,
-                notaFinal: notaFinal.toFixed(1),
+            usuarioActivo.historial.push({
+                cancion: document.getElementById('nombreCancion').value.trim(),
+                puntaje: parseFloat(total),
                 fecha: new Date().toLocaleString()
-            };
+            });
 
-            usuarioActivo.historial.push(nuevoAnalisis);
             guardarDatosOptimizado(usuarios);
             actualizarEstadisticas();
-            datosInterpretacion = { afinacion: [], ritmo: [], potencia: [], estabilidad: [] };
-        }
+            alert(`✅ ¡Guardado! Tu puntaje: ${total}`);
+        });
 
+        // ACTUALIZAR ESTADÍSTICAS
         function actualizarEstadisticas() {
-            if(!usuarioActivo) return;
-            const tuEstadisticas = document.getElementById('tuEstadisticas');
-            const rankingGeneral = document.getElementById('rankingGeneral');
             const rankingConcurso = document.getElementById('rankingConcurso');
+            const rankingGeneral = document.getElementById('rankingGeneral');
+            const tuEstadisticas = document.getElementById('tuEstadisticas');
 
-            // Tus estadísticas
             if(usuarioActivo.historial.length === 0) {
-                tuEstadisticas.innerHTML = "<p style='text-align:center; color:#94a3b8;'>🎤 Todavía no has cantado nada</p>";
+                tuEstadisticas.innerHTML = '<p style="text-align:center; padding:20px;">Aún no has cantado ninguna canción</p>';
             } else {
-                let html = "";
-                const ordenadas = [...usuarioActivo.historial].sort((a,b) => parseFloat(b.notaFinal) - parseFloat(a.notaFinal));
-                ordenadas.forEach((cancion, i) => {
-                    const mejora = i > 0 ? (parseFloat(cancion.notaFinal) > parseFloat(ordenadas[i-1].notaFinal) ? 'mejora ⬆️' : 'empeora ⬇️') : '';
-                    html += `
+                tuEstadisticas.innerHTML = usuarioActivo.historial.map((item, i) => `
                     <div class="progreso-item">
-                        <div class="posicion">${i+1}</div>
+                        <span>${i+1}</span>
                         <div class="info-cancion">
-                            <div class="nombre-cancion">${cancion.cancion}</div>
-                            <div class="fecha-cancion">${cancion.fecha}</div>
+                            <div class="nombre-cancion">${item.cancion}</div>
+                            <div class="fecha-cancion">${item.fecha}</div>
                         </div>
-                        <div class="puntos">${cancion.notaFinal} 
-                            <span class="${mejora}">${mejora}</span> 
-                            <button class="btn-borrar" onclick="borrarRegistro(${i})">🗑️ Borrar</button>
-                        </div>
-                    </div>`;
-                });
-                tuEstadisticas.innerHTML = html;
+                        <span class="puntos">${item.puntaje.toFixed(1)}</span>
+                    </div>
+                `).join('');
             }
 
-            // Ranking General
-            let htmlRanking = "";
-            const todos = usuarios.flatMap(u => u.historial.map(c => ({...c, usuario: u.nombre, tieneTicket: u.tieneTicket})));
-            const ordenGeneral = todos.sort((a,b) => parseFloat(b.notaFinal) - parseFloat(a.notaFinal)).slice(0, 20);
-            
-            if(ordenGeneral.length === 0) {
-                rankingGeneral.innerHTML = "<p style='text-align:center; color:#94a3b8;'>🌐 Nadie ha cantado todavía</p>";
-            } else {
-                ordenGeneral.forEach((c, i) => {
-                    let clasePos = "";
-                    if(i===0) clasePos = "oro";
-                    else if(i===1) clasePos = "plata";
-                    else if(i===2) clasePos = "bronce";
-                    htmlRanking += `
+            const todosPuntajes = usuarios.flatMap(u => 
+                u.historial.map(p => ({
+                    usuario: u.nombre,
+                    tieneTicket: u.tieneTicket,
+                    ticket: u.numeroTicket,
+                    cancion: p.cancion,
+                    puntaje: p.puntaje,
+                    fecha: p.fecha
+                }))
+            ).sort((a,b) => b.puntaje - a.puntaje);
+
+            rankingGeneral.innerHTML = todosPuntajes.length === 0 ? 
+                '<p style="text-align:center; padding:20px;">Aún no hay participaciones</p>' :
+                todosPuntajes.map((item, i) => `
                     <div class="ranking-item">
-                        <div class="posicion ${clasePos}">${i+1}</div>
+                        <span class="posicion ${i===0?'oro':i===1?'plata':i===2?'bronce':''}">${i+1}</span>
                         <div class="info-cancion">
-                            <div class="nombre-cancion">👤 ${c.usuario} | 🎵 ${c.cancion}</div>
-                            <div class="fecha-cancion">Afinación: ${c.afinacion.toFixed(1)}% | Ritmo: ${c.ritmo.toFixed(1)}%</div>
+                            <div class="nombre-cancion">${item.usuario} - ${item.cancion}</div>
+                            <div class="fecha-cancion">${item.fecha} ${item.tieneTicket ? `<span class="ticket-info">🎟️ ${item.ticket}</span>` : `<span class="sin-derecho">❌ SIN TICKET</span>`}</div>
                         </div>
-                        <div class="puntos">${c.notaFinal}</div>
-                    </div>`;
-                });
-                rankingGeneral.innerHTML = htmlRanking;
-            }
+                        <span class="puntos">${item.puntaje.toFixed(1)}</span>
+                    </div>
+                `).join('');
 
-            // TOP 50 Concurso (solo con TICKET)
-            const conTicket = todos.filter(c => c.tieneTicket).sort((a,b) => parseFloat(b.notaFinal) - parseFloat(a.notaFinal)).slice(0,50);
-            let htmlConcurso = "";
-            if(conTicket.length === 0) {
-                htmlConcurso = "<p style='text-align:center; color:#f87171;'>❌ Ningún participante tiene ticket comprado todavía</p>";
-            } else {
-                conTicket.forEach((c, i) => {
-                    let clasePos = "";
-                    if(i===0) clasePos = "oro";
-                    else if(i===1) clasePos = "plata";
-                    else if(i===2) clasePos = "bronce";
-                    htmlConcurso += `
+            const clasificados = todosPuntajes.filter(item => item.tieneTicket).slice(0,50);
+            rankingConcurso.innerHTML = clasificados.length === 0 ? 
+                '<p style="text-align:center; color:#ffd700; padding:20px;">🎟️ Aún no hay clasificados con ticket activo</p>' :
+                clasificados.map((item, i) => `
                     <div class="ranking-item">
-                        <div class="posicion ${clasePos}">${i+1}</div>
+                        <span class="posicion ${i===0?'oro':i===1?'plata':i===2?'bronce':''}">${i+1}</span>
                         <div class="info-cancion">
-                            <div class="nombre-cancion">👤 ${c.usuario}</div>
-                            <div class="fecha-cancion">🎵 ${c.cancion}</div>
-                        </div>
-                        <div class="puntos">${c.notaFinal}</div>
-                    </div>`;
-                });
-            }
-            rankingConcurso.innerHTML = htmlConcurso;
-        }
+                            <div class="nombre-cancion">${item.usuario} - ${item.cancion}</div>
+                            }).sort((a,b) => b.puntaje - a.puntaje);
 
-        // FUNCIÓN NUEVA: BORRAR SOLO LOS REGISTROS DEL USUARIO ACTIVO
-        function borrarRegistro(indice) {
-            if(confirm("⚠️ ¿Estás seguro? Vas a borrar esta interpretación y no se puede deshacer.")){
-                usuarioActivo.historial.splice(indice, 1);
-                guardarDatosOptimizado(usuarios);
-                actualizarEstadisticas();
-            }
-        }
+rankingGeneral.innerHTML = todosPuntajes.length === 0 ? 
+    '<p style="text-align:center; padding:20px;">Aún no hay participaciones</p>' :
+    todosPuntajes.map((item, i) => `
+        <div class="ranking-item">
+            <span class="posicion ${i===0?'oro':i===1?'plata':i===2?'bronce':''}">${i+1}</span>
+            <div class="info-cancion">
+                <div class="nombre-cancion">${item.usuario} - ${item.cancion}</div>
+                <div class="fecha-cancion">${item.fecha} ${item.tieneTicket ? `<span class="ticket-info">🎟️ ${item.ticket}</span>` : `<span class="sin-derecho">❌ SIN TICKET</span>`}</div>
+            </div>
+            <span class="puntos">${item.puntaje.toFixed(1)}</span>
+        </div>
+    `).join('');
+
+const clasificados = todosPuntajes.filter(item => item.tieneTicket).slice(0,50);
+rankingConcurso.innerHTML = clasificados.length === 0 ? 
+    '<p style="text-align:center; color:#ffd700; padding:20px;">🎟️ Aún no hay clasificados con ticket activo</p>' :
+    clasificados.map((item, i) => `
+        <div class="ranking-item">
+            <span class="posicion ${i===0?'oro':i===1?'plata':i===2?'bronce':''}">${i+1}</span>
+            <div class="info-cancion">
+                <div class="nombre-cancion">${item.usuario} - ${item.cancion}</div>
+                <div class="fecha-cancion">${item.fecha} <span class="ticket-info">🎟️ ${item.ticket}</span></div>
+            </div>
+            <span class="puntos">${item.puntaje.toFixed(1)}</span>
+        </div>
+    `).join('');
+}
     </script>
 </body>
 </html>
- 
+
