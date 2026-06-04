@@ -1294,39 +1294,48 @@ document.getElementById('btnComprarTicketLogin').addEventListener('click', abrir
                 `).join('');
             }
 
-            const todosPuntajes = usuarios.flatMap(u => 
-                u.historial.map(p => ({
-                    usuario: u.nombre,
-                    tieneTicket: u.tieneTicket,
-                    ticket: u.numeroTicket,
-                    cancion: p.cancion,
-                    puntaje: p.puntaje,
-                    fecha: p.fecha
-                }))
-            ).sort((a,b) => b.puntaje - a.puntaje);
+                    const todosPuntajes = usuarios.flatMap(u => 
+            u.historial.map(p => ({
+                usuario: u.nombre,
+                tieneTicket: u.tieneTicket,
+                ticket: u.numeroTicket,
+                cancion: p.cancion,
+                puntaje: p.puntaje,
+                fecha: p.fecha
+            }))
+        ).sort((a,b) => b.puntaje - a.puntaje);
 
-            rankingGeneral.innerHTML = todosPuntajes.length === 0 ? 
-                '<p style="text-align:center; padding:20px;">Aún no hay participaciones</p>' :
-                todosPuntajes.map((item, i) => `
-                    <div class="ranking-item">
-                        <span class="posicion ${i===0?'oro':i===1?'plata':i===2?'bronce':''}">${i+1}</span>
-                        <div class="info-cancion">
-                            <div class="nombre-cancion">${item.usuario} - ${item.cancion}</div>
-                            <div class="fecha-cancion">${item.fecha} ${item.tieneTicket ? `<span class="ticket-info">🎟️ ${item.ticket}</span>` : `<span class="sin-derecho">❌ SIN TICKET</span>`}</div>
-                        </div>
-                        <span class="puntos">${item.puntaje.toFixed(1)}</span>
+        rankingGeneral.innerHTML = todosPuntajes.length === 0 ? 
+            '<p style="text-align:center; padding:20px;">Aún no hay participaciones</p>' :
+            todosPuntajes.map((item, i) => `
+                <div class="ranking-item">
+                    <span class="posicion ${i===0?'oro':i===1?'plata':i===2?'bronce':''}">${i+1}</span>
+                    <div class="info-cancion">
+                        <div class="nombre-cancion">${item.usuario} - ${item.cancion}</div>
+                        <div class="fecha-cancion">${item.fecha} ${item.tieneTicket ? `<span class="ticket-info">🎟️ ${item.ticket}</span>` : `<span class="sin-derecho">❌ SIN TICKET</span>`}</div>
                     </div>
-                `).join('');
+                    <span class="puntos">${item.puntaje.toFixed(1)}</span>
+                </div>
+            `).join('');
 
-            const clasificados = todosPuntajes.filter(item => item.tieneTicket).slice(0,50);
-            rankingConcurso.innerHTML = clasificados.length === 0 ? 
-                '<p style="text-align:center; color:#ffd700; padding:20px;">🎟️ Aún no hay clasificados con ticket activo</p>' :
-                clasificados.map((item, i) => `
-                    <div class="ranking-item">
-                        <span class="posicion ${i===0?'oro':i===1?'plata':i===2?'bronce':''}">${i+1}</span>
-                        <div class="info-cancion">
-                            <div class="nombre-cancion">${item.usuario} - ${item.cancion}</div>
-                            }).sort((a,b) => b.puntaje - a.puntaje);
+        const clasificados = todosPuntajes.filter(item => item.tieneTicket).slice(0,50);
+        rankingConcurso.innerHTML = clasificados.length === 0 ? 
+            '<p style="text-align:center; color:#ffd700; padding:20px;">🎟️ Aún no hay clasificados con ticket activo</p>' :
+            clasificados.map((item, i) => `
+                <div class="ranking-item">
+                    <span class="posicion ${i===0?'oro':i===1?'plata':i===2?'bronce':''}">${i+1}</span>
+                    <div class="info-cancion">
+                        <div class="nombre-cancion">${item.usuario} - ${item.cancion}</div>
+                        <div class="fecha-cancion">${item.fecha} <span class="ticket-info">🎟️ ${item.ticket}</span></div>
+                    </div>
+                    <span class="puntos">${item.puntaje.toFixed(1)}</span>
+                </div>
+            `).join('');
+    }
+    </script>
+</body>
+</html>
+
 
 rankingGeneral.innerHTML = todosPuntajes.length === 0 ? 
     '<p style="text-align:center; padding:20px;">Aún no hay participaciones</p>' :
